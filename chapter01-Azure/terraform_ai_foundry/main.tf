@@ -36,9 +36,15 @@ resource "azurerm_resource_group" "ai_foundry_rg" {
 # }
 
 resource "azurerm_ai_services" "ai_foundry_service" {
-  name = "ais-kc-chan-test"
+  name = "ais-${var.region_code}-${var.prj_code}-${var.purpose}"
   resource_group_name = azurerm_resource_group.ai_foundry_rg.name
   location = var.region
   sku_name = "S0"
+  public_network_access = "disabled"
+
+  network_acls {
+    default_action = "deny"
+    ip_rules = [data.http.ip.response_body]
+  }
   
 }
