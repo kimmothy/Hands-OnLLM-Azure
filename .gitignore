@@ -1,6 +1,7 @@
 **/license.txt
 **/terraform.tfstate
 **/terraform.tfstate*
+**/.terraform.tfstate*
 **/.terraform.lock.hcl
 **/modules.json
 **/terraform-provider-**
