@@ -52,14 +52,17 @@ resource "azurerm_ai_services" "ai_foundry_service" {
   resource_group_name = azurerm_resource_group.ai_foundry_rg.name
   location = var.region
   sku_name = "S0"
-  public_network_access = "Disabled"
-
+  public_network_access = "Enabled"
   custom_subdomain_name = "ais-${var.region_code}-${var.prj_code}-${var.env_code}"
 
   network_acls {
     default_action = "Deny"
     ip_rules = [data.http.ip.response_body]
     
+  }
+
+  identity {
+    type = "SystemAssigned"
   }
   
 }
