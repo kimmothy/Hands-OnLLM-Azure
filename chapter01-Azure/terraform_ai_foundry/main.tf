@@ -36,7 +36,7 @@ resource "azurerm_resource_group" "ai_foundry_rg" {
 # }
 
 resource "azurerm_ai_services" "ai_foundry_service" {
-  name = "ais-${var.region_code}-${var.prj_code}-${var.purpose}"
+  name = "ais-${var.region_code}-${var.prj_code}-${var.env_code}"
   resource_group_name = azurerm_resource_group.ai_foundry_rg.name
   location = var.region
   sku_name = "S0"

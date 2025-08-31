@@ -5,4 +5,5 @@
 **/modules.json
 **/terraform-provider-**
 **/.terraform/*
+**.tfvars
 
