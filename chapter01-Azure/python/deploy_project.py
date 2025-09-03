@@ -32,7 +32,7 @@ client = CognitiveServicesManagementClient(
 # )
 
 # Wait for the resource creation to complete
-resource_result = resource.result()
+# resource_result = resource.result()
 
 # Create default project
 project = client.projects.begin_create(
