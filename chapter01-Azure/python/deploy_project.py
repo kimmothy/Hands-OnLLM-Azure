@@ -16,20 +16,20 @@ client = CognitiveServicesManagementClient(
 )
 
 # Create resource
-resource = client.accounts.begin_create(
-    resource_group_name=resource_group_name,
-    account_name=foundry_resource_name,
-    account={
-        "location": location,
-        "kind": "AIServices",
-        "sku": {"name": "S0",},
-        "identity": {"type": "SystemAssigned"},
-        "properties": {
-            "allowProjectManagement": True,
-            "customSubDomainName": foundry_resource_name
-        }
-    }
-)
+# resource = client.accounts.begin_create(
+#     resource_group_name=resource_group_name,
+#     account_name=foundry_resource_name,
+#     account={
+#         "location": location,
+#         "kind": "AIServices",
+#         "sku": {"name": "S0",},
+#         "identity": {"type": "SystemAssigned"},
+#         "properties": {
+#             "allowProjectManagement": True,
+#             "customSubDomainName": foundry_resource_name
+#         }
+#     }
+# )
 
 # Wait for the resource creation to complete
 resource_result = resource.result()

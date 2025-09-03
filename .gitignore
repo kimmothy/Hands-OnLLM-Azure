@@ -8,4 +8,4 @@
 **/.terraform/*
 **.tfvars
 **/.env
-
+**/**test.py
